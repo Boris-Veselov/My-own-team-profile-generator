@@ -88,8 +88,13 @@ const promptMenu = () => {
             case 'add an intern':
                 promptIntern();
                 break;
+            case 'finish building my team':
+                console.log('Finished building the team!');
+                writeFile();
+                break;
             default:
                 promptMenu();
+        
         }
     });
 };
@@ -220,9 +225,8 @@ const promptIntern = () => {
     })
 };
 
-
-const writeFile = data => {
-    fs.writeFile('./dist/index.html', data, err => {
+const writeFile = () => {
+    fs.writeFile('./dist/index.html', generatePage(myTeam), err => {
         if (err) {
             console.log(err);
             return;
