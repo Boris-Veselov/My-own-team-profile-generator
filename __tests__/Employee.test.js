@@ -22,32 +22,3 @@ test( 'get email with getEmail method', () => {
 test( 'get role with getRole method', () => {
     expect(employee.getRole()).toBe('Employee')
 });
-// test('creates employee object', () => {
-//     const employee = new Employee();
-
-//     expect(typeof employee).toBe('object');
-
-//     // expect(employee.email).toBe();
-// });
-
-// test('create employee name', () => {
-//     const employee = new Employee('Don');
-
-//     expect(employee.name).toEqual('Don');
-// });
-
-// test('create employee id', () => {
-//     const employee = new Employee('name', 1);
-
-//     expect(employee.id).toEqual(1)
-// });
-
-// test( 'create employee email', () => {
-//     const employee = new Employee('name', 1, 'email');
-
-//     expect(employee.email).toEqual('email')
-// });
-
-
-
-

@@ -1,0 +1,32 @@
+header {
+    color: rgb(0, 0, 0);
+    background-color: rgba(74, 151, 67, 0.591);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+    padding: 20px;
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 15px;
+    padding: 20px;
+}
+
+.card {
+    padding: 15px;
+    margin: 20px;
+}
+
+.card-header {
+    color: rgb(0, 0, 0);
+    background-color: rgba(108, 108, 175, 0.584);
+
+}
+
+.list-group {
+    color: rgb(0, 0, 0);
+}
+

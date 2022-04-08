@@ -1,12 +1,12 @@
 const inquirer = require('inquirer');
+const fs = require('fs'); 
+const generatePage = require('./src/generatePage.js'); 
+
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
-const fs = require('fs') 
-const path = require('path') 
+
 const myTeam = [];
-
-
 
 // manager prompts
 const promptManager = () => {
@@ -66,7 +66,7 @@ const promptManager = () => {
     ]).then(answer => {
         const manager = new Manager(answer.name, answer.id, answer.email, answer.officeNumber);
         myTeam.push(manager);
-        promtMenu();
+        promptMenu();
     })
 };
 
@@ -89,19 +89,13 @@ const promptMenu = () => {
                 promptIntern();
                 break;
             default:
-                buildMyTeam();
+                promptMenu();
         }
     });
 };
 
 // engineer prompt
 const promptEngineer = () => {
-  console.log(`
-===================
-    add engineer
-===================
-`);
-
     return inquirer.prompt([
         {
             type: 'input',
@@ -156,19 +150,15 @@ const promptEngineer = () => {
             }
         }
     ]).then(answer => {
+        console.log(answer);
         const engineer = new Engineer(answer.name, answer.id, answer.email, answer.github);
         myTeam.push(engineer);
-        promtMenu();
+        promptMenu();
     })
 };
 
 // intern prompt
 const promptIntern = () => {
-    console.log(`
-=================
-    add intern
-=================
-`);
     return inquirer.prompt([
         {
             type: 'input',
@@ -211,7 +201,7 @@ const promptIntern = () => {
         },
         {
             type: 'input',
-            name: 'github',
+            name: 'school',
             messgae: 'Enter the name of your school. (Required)',
             validate: email => {
                 if (email) {
@@ -223,26 +213,23 @@ const promptIntern = () => {
             }
         }
     ]).then(answer => {
+        console.log(answer);
         const intern = new Intern(answer.name, answer.id, answer.email, answer.school);
         myTeam.push(intern);
-        promtMenu();
+        promptMenu();
     })
 };
 
-// finished building team prompt
-const buildMyTeam = () => {
-    console.log(`
-================================
-    finished building my team
-================================
-`);
 
-// make output path of there isn't one
-if (!fs.existsSync(OUTPUT_DIR)) {
-    fs.mkdirSync(OUTPUT_DIR)
-}
-fs.writeFileSync(outputPath, generateSite(myTeam), 'utf-8');
-}
+const writeFile = data => {
+    fs.writeFile('./dist/index.html', data, err => {
+        if (err) {
+            console.log(err);
+            return;
+        } else {
+            console.log("Your team has been added!")
+        }
+    })
+};
 
-promptMenu();
-promptManager();
+promptManager()
