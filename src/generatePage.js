@@ -1,8 +1,11 @@
+// function to generate the page
 const generateTeam = (myTeam) => {
     console.log(myTeam);
 
+    // array to push all the employees through the loop
     const html = [];
 
+    // functions of all the employees
     const genManager = Manager => {
         console.log(Manager);
         var managerGenHtml = ` 

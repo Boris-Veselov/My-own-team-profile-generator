@@ -225,6 +225,7 @@ const promptIntern = () => {
     })
 };
 
+// function to generate HTML using writeFile
 const writeFile = () => {
     fs.writeFile('./dist/index.html', generatePage(myTeam), err => {
         if (err) {
