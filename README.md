@@ -17,7 +17,7 @@ Command-line application that takes in information about employees on a software
 
 # Website
 
-https://boris-veselov.github.io/team-profile-generator/
+https://boris-veselov.github.io/My-own-team-profile-generator/
 
 # Screenshot
 <img width="1217" alt="Screen Shot 2022-04-10 at 12 46 59 PM" src="https://user-images.githubusercontent.com/96749114/162630363-b4e00ba6-9c32-43e8-be9b-ad6fa0167d65.png">
