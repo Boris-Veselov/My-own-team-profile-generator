@@ -19,7 +19,11 @@ Command-line application that takes in information about employees on a software
 
 https://boris-veselov.github.io/team-profile-generator/
 
-# Screenshot
+# Demo
+
+https://user-images.githubusercontent.com/96749114/162630255-bfb99a79-82ce-4ef1-b33d-962451768bb4.mp4
+
+
 
 # Contribution
 
